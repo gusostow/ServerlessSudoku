@@ -1,3 +1,4 @@
+import json
 from functools import reduce
 from itertools import chain, groupby
 from typing import List, Tuple, Set
@@ -101,9 +102,14 @@ def solve(board: Board) -> Board:
     return board
 
 
-def handler(event, context) -> Board:
-    board: Board = event["board"]
-    return solve(board)
+def handler(event, context) -> dict:
+    board: Board = json.loads(event["body"])["board"]
+    solution = solve(board)
+    response = {
+        "statusCode": 200,
+        "body": json.dumps(solution),
+    }
+    return response
 
 
 if __name__ == "__main__":

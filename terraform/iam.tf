@@ -31,6 +31,12 @@ resource "aws_iam_policy" "develop_lambda" {
         "Effect": "Allow", 
         "Action": ["lambda:CreateFunction"],
         "Resource": "*"
+    },
+    {
+        "Sid": "GatewayAll",
+        "Effect": "Allow", 
+        "Action": ["apigateway:*"],
+        "Resource": "*"
     }
 ]
 }

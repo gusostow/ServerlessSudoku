@@ -128,3 +128,6 @@ dmypy.json
 *.out
 vendor/
 .test-data
+
+# project
+deployments/*.zip
