@@ -48,3 +48,12 @@ resource "aws_iam_policy_attachment" "attach_develop_lambda" {
   users      = ["${var.iam_profile}"]
   policy_arn = "${aws_iam_policy.develop_lambda.arn}"
 }
+
+data "aws_iam_policy" "lambda_basic" {
+    arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+}
+
+resource "aws_iam_role_policy_attachment" "attach_lambda_basic" {
+    role = "${aws_iam_role.lambda_exec_role.name}"
+    policy_arn = "${data.aws_iam_policy.lambda_basic.arn}"
+}
