@@ -108,6 +108,9 @@ def handler(event, context) -> dict:
     response = {
         "statusCode": 200,
         "body": json.dumps(solution),
+        "headers": {
+            "Access-Control-Allow-Origin": "*",
+        }
     }
     return response
 
