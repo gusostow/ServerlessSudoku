@@ -37,11 +37,16 @@ resource "aws_s3_bucket_policy" "frontend_policy" {
 EOF
 }
 
-resource "aws_s3_bucket_object" "index" {
-    bucket = "${aws_s3_bucket.frontend.bucket}"
-    key = "index.html"
-    source = "${var.index_file}"
-    etag = "${md5(file(var.index_file))}"
+resource "null_resource" "sync_static" {
+    depends_on = ["aws_s3_bucket.frontend"]
+    triggers = {
+        # TODO: Figure out how to hash static folder
+        lambda_payload_hash = "${md5(file(var.source_code_path))}"
+    }
+    
+    provisioner "local-exec" {
+        command = "aws s3 sync ../static s3://${aws_s3_bucket.frontend.bucket}"
+    }
 }
 
 resource "aws_s3_bucket" "logs" {
