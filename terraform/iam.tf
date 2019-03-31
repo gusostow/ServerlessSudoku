@@ -18,37 +18,6 @@ resource "aws_iam_role" "lambda_exec_role" {
 EOF
 }
 
-resource "aws_iam_policy" "develop_lambda" {
-  name        = "develop_lambda"
-  description = "Policy for users to develop and test lambdas"
-
-  policy = <<EOF
-{
-"Version": "2012-10-17",
-"Statement": [
-    {
-        "Sid": "DevelopFunctions",
-        "Effect": "Allow", 
-        "Action": ["lambda:CreateFunction"],
-        "Resource": "*"
-    },
-    {
-        "Sid": "GatewayAll",
-        "Effect": "Allow", 
-        "Action": ["apigateway:*"],
-        "Resource": "*"
-    }
-]
-}
-EOF
-}
-
-resource "aws_iam_policy_attachment" "attach_develop_lambda" {
-  name       = "attach-develop-lambda"
-  users      = ["${var.iam_profile}"]
-  policy_arn = "${aws_iam_policy.develop_lambda.arn}"
-}
-
 data "aws_iam_policy" "lambda_basic" {
     arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
 }
