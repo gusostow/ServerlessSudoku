@@ -1,8 +1,22 @@
 /* style.css */
-h2 {
-    color: blue
+body {
+    font-family: Arial, Verdanal
+}
+
+#board_header {
+    display: table;
+    color: blue;
+    margin: 0 auto;
 }
 
 .cell {
-    width: 15px
+    font-size: 15pt;
+    width: 25px;
+    height: 25px;
+    border: 1px solid black;
+}
+
+#board {
+    display: table;
+    margin: 0 auto;
 }
