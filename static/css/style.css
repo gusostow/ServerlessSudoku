@@ -1,11 +1,16 @@
 /* style.css */
-body {
-    font-family: Arial, Verdanal
+body .cell {
+    background-color: lightgray;
+    font-family: Helvetica, Arial, sans-serif
+}
+
+#submit-buttons {
+    display: table;
+    margin: 0 auto;
 }
 
 #board_header {
     display: table;
-    color: blue;
     margin: 0 auto;
 }
 
@@ -16,7 +21,12 @@ body {
     border: 1px solid black;
 }
 
+#instructions {
+    float: left;
+    padding-right: 100px
+}
+
 #board {
-    display: table;
-    margin: 0 auto;
+    padding-top: 3%;
+    float: left;
 }

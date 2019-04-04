@@ -2,13 +2,20 @@
 <html>
     <head>
         <link type="text/css" href="css/style.css" rel="stylesheet">
-        <title>Sudoku-Blaster</title>
+        <title>ServerlessSudoku</title>
     </head>
     <body>
-        <h2>Sudoku Blaster!</h2>
-        <hr>
+        <h2>ServerlessSudoku</h2>
+        <div id="instructions">
+            <h3>Instructions</h3>
+            <p>
+                <ol>
+                    <li>Input the problem into the board</li>
+                    <li>Press submit. Nothing will happen if the board is invalid.</li>
+                </ol>
+            </p>
+        </div>
         <div id="board">
-            <h2 id="board_header">Board</h2>
             <form>
                 <table>
                     <tbody></tbody>
@@ -112,8 +119,10 @@
                         <td><input class="cell" id="c88" maxlength="1" autocomplete="off"/></td>
                     </tr>
                 </table>
-                <td><input type="reset" value="Reset"></td>
-                <td><input type="button" value="Submit" onclick="javascript:fill_board()"></td>
+                <span id="submit-buttons">
+                    <td><input class="submit" type="reset" value="Reset"></td>
+                    <td><input class="submit" type="button" value="Submit" onclick="javascript:fill_board()"></td>
+                </span>
             </form>
         </div>
     </body>
