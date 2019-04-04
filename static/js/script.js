@@ -8,6 +8,21 @@ function drawBoard() {
             cell.setAttribute("id", "c" + rowIdx + colIdx)
             cell.setAttribute("maxlength", "1")
             cell.setAttribute("autocomplete", "off")
+            
+            thickBorderStr = "4px solid black"
+            if (colIdx == 0) {
+                cell.style.borderLeft = thickBorderStr
+            }
+            if (rowIdx == 0){
+                cell.style.borderTop = thickBorderStr
+            }
+            if (colIdx % 3 == 2) {
+                cell.style.borderRight = thickBorderStr
+            }
+            if (rowIdx % 3 == 2) {
+                cell.style.borderBottom = thickBorderStr
+            }
+
             col.appendChild(cell)
             rowElement.appendChild(col)
         }
