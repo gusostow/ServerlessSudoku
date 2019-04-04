@@ -1,11 +1,11 @@
 resource "aws_s3_bucket" "frontend" {
-    bucket = "${var.frontend_host}"
+    bucket = "${var.frontend_host}-gus"
     acl = "public-read"
     force_destroy = true
     
     logging {
         target_bucket = "${aws_s3_bucket.logs.bucket}"
-        target_prefix = "${var.frontend_host}/"
+        target_prefix = "${var.frontend_host}-gus/"
     }
 
     website {
@@ -51,7 +51,7 @@ resource "null_resource" "sync_static" {
 }
 
 resource "aws_s3_bucket" "logs" {
-    bucket = "${var.frontend_host}-logs"
+    bucket = "${var.frontend_host}-gus-logs"
     acl = "log-delivery-write"
     force_destroy = true
 }

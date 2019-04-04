@@ -36,7 +36,7 @@ resource "aws_lambda_permission" "apigw_lambda" {
 }
 
 resource "aws_api_gateway_deployment" "sudoku_deployment" {
-  depends_on = ["aws_api_gateway_method.sudoku_post"]
+  depends_on = ["aws_api_gateway_integration.sudoku_integration"]
   rest_api_id = "${aws_api_gateway_rest_api.SudokuAPI.id}"
   stage_name = "development"
   
