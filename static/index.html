@@ -9,7 +9,7 @@
     <body>
         <h2>ServerlessSudoku</h2>
         <div class="container">
-            <div class="row">
+            <div class="row top-buffer">
                 <div id="instructions" class="col">
                     <h4>Instructions</h4>
                     <p>
@@ -22,7 +22,7 @@
                 <div id="board" class="col offset-md-1">
                     <form>
                         <table>
-                            <tbody></tbody>
+                            <tbody>
                             <tr>
                                 <td><input class="cell" id="c00" maxlength="1" autocomplete="off"/></td>
                                 <td><input class="cell" id="c01" maxlength="1" autocomplete="off"/></td>
@@ -122,10 +122,11 @@
                                 <td><input class="cell" id="c87" maxlength="1" autocomplete="off"/></td>
                                 <td><input class="cell" id="c88" maxlength="1" autocomplete="off"/></td>
                             </tr>
+                        </tbody>
                         </table>
                         <span id="submit-buttons">
-                            <td><input class="submit" type="reset" value="Reset"></td>
-                            <td><input class="submit" type="button" value="Submit" onclick="javascript:fill_board()"></td>
+                            <td><input class="btn btn-outline-secondary" type="reset" value="Reset"></td>
+                            <td><input class="btn btn-outline-primary" type="button" value="Submit" onclick="javascript:fill_board()"></td>
                         </span>
                     </form>
                 </div>
