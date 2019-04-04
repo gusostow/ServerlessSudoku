@@ -1,32 +1,9 @@
 /* style.css */
-body .cell {
-    background-color: lightgray;
-    font-family: Helvetica, Arial, sans-serif
-}
-
-#submit-buttons {
-    display: table;
-    margin: 0 auto;
-}
-
-#board_header {
-    display: table;
-    margin: 0 auto;
-}
 
 .cell {
     font-size: 15pt;
     width: 25px;
     height: 25px;
     border: 1px solid black;
-}
-
-#instructions {
-    float: left;
-    padding-right: 100px
-}
-
-#board {
-    padding-top: 3%;
-    float: left;
+    background-color: lightgray;
 }
