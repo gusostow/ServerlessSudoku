@@ -1,3 +1,3 @@
-# Sudoku Blaster
+# ServerlessSudoku
 
-A serverless case study.
+A case study.
