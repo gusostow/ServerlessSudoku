@@ -10,9 +10,10 @@
 }
 
 .cell {
+    text-align: center;
     font-size: 15pt;
-    width: 30px;
-    height: 30px;
+    width: 34px;
+    height: 34px;
     border: 1px solid black;
     background-color: lightgray;
 }
