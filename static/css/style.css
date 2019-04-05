@@ -17,3 +17,33 @@
     border: 1px solid black;
     background-color: lightgray;
 }
+
+.buttonSize{
+    width: 140px;
+}
+
+
+@media only screen and (min-width: 767px) {
+    .mobile{
+        display: none !important;
+    }
+  }
+
+
+
+@media only screen and (max-width: 767px) {
+    .mobile{
+        display: block;
+        font-size: 40px;
+    }
+    .desktop{
+        display: none !important;
+    }
+    .cell{
+        width: 36px;
+        height: 36px;
+    }
+    p{
+        font-size: 14px !important;
+    }
+  }
