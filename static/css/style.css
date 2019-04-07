@@ -10,16 +10,43 @@
 }
 
 .cell {
-    font-size: 15pt;
     text-align: center;
-    width: 40px;
-    height: 40px;
+    font-size: 15pt;
+    width: 50px;
+    height: 50px;
     border: 1px solid black;
     background-color: lightgray;
-    border-color: black
 }
 
-td {
-    padding: 0px;
-    margin: 0px;
+.buttonSize{
+    width: 140px;
 }
+
+
+@media only screen and (min-width: 767px) {
+    .mobile{
+        display: none !important;
+    }
+  }
+
+
+
+@media only screen and (max-width: 767px) {
+    .mobile{
+        display: block;
+        font-size: 40px;
+    }
+    .desktop{
+        display: none !important;
+    }
+    .cell{
+        width: 36px;
+        height: 36px;
+    }
+    p{
+        font-size: 14px !important;
+    }
+    li{
+        font-size: 14px;
+    }
+  }
