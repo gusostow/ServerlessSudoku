@@ -13,6 +13,16 @@ resource "aws_s3_bucket" "frontend" {
     }
 }
 
+resource "aws_s3_bucket" "www_redirect" {
+    bucket = "www.${var.frontend_host}"
+    acl = "public-read"
+    force_destroy = true
+
+    website {
+        redirect_all_requests_to = "${var.frontend_host}"
+    }
+}
+
 resource "aws_s3_bucket_policy" "frontend_policy" {
     depends_on = ["aws_s3_bucket.frontend"]
 
